@@ -49,3 +49,21 @@
     }
   }
 }
+
+.burger-menu {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-one-01;
+
+  &:hover,
+  &:focus { color: $color-one-01; }
+
+  i {
+    font-size: 24px;
+    line-height: 1;
+
+    &:last-child { display: none; }
+  }
+}

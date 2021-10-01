@@ -1,16 +1,84 @@
+.show-menu {
+  @include media-breakpoint-down(md) {
+    overflow: hidden;
+
+    .header {
+      background-color: #fff;
+      height: 100vh;
+    }
+
+    .header .nav-icon { display: flex; }
+
+    .burger-menu i:first-child { display: none; }
+    .burger-menu i:last-child { display: block; }
+
+    .nav-header { display: flex; }
+  }
+}
+
 .header {
-  height: $header-height;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 900;
 
+  @include media-breakpoint-up(lg) {
+    height: $header-height;
+  }
+
   .container {
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .nav-icon {
+    margin-top: 50px;
+    padding-left: 10px;
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+      padding-left: 0;
+      display: flex;
+    }
+
+    .nav-link i {
+      font-size: 24px;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.header-left {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .burger-menu {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
   }
 }
 
@@ -42,25 +110,55 @@
 }
 
 .nav-header {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+  padding-left: 10px;
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+    margin-top: 0;
+    padding-left: 0;
+    display: flex;
+  }
+
   .nav-link {
-    font-weight: 500;
-    font-size: 15px;
-    padding: 0;
+    font-size: 20px;
     position: relative;
     color: $gray-700;
+    padding: 0;
 
-    + .nav-link { margin-left: 30px; }
+    @include media-breakpoint-up(lg) {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    + .nav-link {
+      margin-top: 20px;
+
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+        margin-left: 30px;
+      }
+    }
 
     &::before {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -3px;
       left: 0;
       right: 0;
       border-bottom: 2px solid $secondary;
       display: none;
+
+      @include media-breakpoint-up(lg) {
+        bottom: -8px;
+      }
     }
 
-    &.active::before { display: block; }
+    &.active::before {
+      display: block;
+    }
   }
 }

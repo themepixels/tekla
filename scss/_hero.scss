@@ -2,13 +2,18 @@
 .hero {
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
 
   .header { position: absolute; }
 
   .section {
-    height: 100vh;
-    min-height: 720px;
-    max-height: 1080px;
+    min-height: 100vh;
+
+    @include media-breakpoint-up(lg) {
+      height: 100vh;
+      min-height: 720px;
+      max-height: 1080px;
+    }
 
     > .container {
       display: flex;
@@ -18,8 +23,13 @@
   }
 
   .section-label {
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-size: 11px;
+    margin-bottom: 5px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
   }
 
   .btn-hero {
@@ -59,18 +69,53 @@
   }
 }
 
+.hero-body {
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.hero-footer {
+  margin-top: 20px;
+  padding-left: 10px;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 30px;
+    width: 60%;
+    padding-left: 0;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-top: 40px;
+  }
+}
+
 .hero-title {
   color: $color-one-01;
-  font-size: 54px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 600;
   font-family: $ff-serif;
-  letter-spacing: -1px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 54px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
 }
 
 .hero-text {
-  font-size: 18px;
-  font-weight: 300;
   color: $gray-700;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 18px;
+    font-weight: 300;
+  }
 }
 
 .hero-one {
@@ -91,8 +136,17 @@
   .header-brand span::after { background-color: $color-one-02; }
 
   .hero-image {
-    left: 50%;
-    top: $header-height;
+    align-self: flex-end;
+    position: relative;
+    width: 80%;
+    margin-right: -15px;
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      left: 50%;
+      width: auto;
+      top: $header-height;
+    }
 
     img { object-position: top left; }
   }
@@ -111,44 +165,20 @@
     &:hover,&:focus { color: $color-one-02; }
   }
 
-  .section { padding-top: $header-height; }
+  .section {
+    padding-top: $header-height;
+  }
+
   .section-label { color: $color-one-02; }
-  .hero-text { margin-bottom: 35px; }
-}
 
-.hero-two {
-  .header-brand span { color: #34495E; }
-  .header-brand span::after { background-color: #F1C40F; }
+  .hero-title {
+    margin-bottom: 20px;
 
-  .hero-image {
-    left: 5%;
-    width: 45%;
-    top: $header-height;
+    @include media-breakpoint-up(lg) { margin-bottom: 30px; }
+  }
 
-    @include media-breakpoint-up(xl) {
-      left: calc((100vw - 1140px) / 2);
-    }
-
-    @include media-breakpoint-up(xxl) {
-      left: calc((100vw - 1320px) / 2);
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 10%;
-      left: 5%;
-      right: 12%;
-      bottom: 0;
-      background-color: #d1e4fd;
-      //border-radius: 30%;
-      transform: skewY(10deg);
-    }
-
-    img {
-      position: relative;
-      object-position: top left;
-      object-fit: contain;
-    }
+  .hero-text {
+    margin-bottom: 25px;
+    @include media-breakpoint-up(lg) { margin-bottom: 35px; }
   }
 }
