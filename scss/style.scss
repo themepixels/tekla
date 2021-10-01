@@ -1,0 +1,17 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+// Variables & Mixins
+@import "variables";
+@import "mixins";
+
+// Bootstrap Framework
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@import "components";
+
+@import "hero";
+@import "header";
+@import "section";
+@import "util";

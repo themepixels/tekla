@@ -1,0 +1,35 @@
+
+.section {
+  position: relative;
+  height: 100vh;
+  min-height: 768px;
+  max-height: 1080px;
+
+  > .container { height: 100%; }
+}
+
+.section-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $secondary;
+}
+
+.section-title {
+  font-weight: 700;
+  font-family: $ff-serif;
+  color: $color-one-01;
+
+  &.d-flex { align-items: center; }
+
+  a {
+    line-height: 1;
+    font-size: 24px;
+    font-weight: 400;
+    position: relative;
+    top: 3px;
+    color: $color-one-02;
+  }
+}

@@ -1,0 +1,51 @@
+// Buttons
+.btn {
+  padding: 8px 16px;
+  font-size: 15px;
+  letter-spacing: .2px;
+  border-radius: 0;
+  line-height: 1.467;
+}
+
+.card-article {
+  position: relative;
+  border-width: 0;
+  border-radius: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: -6px;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid $color-one-03;
+    z-index: 5;
+  }
+
+  .card-img {
+    border-radius: inherit;
+    position: relative;
+  }
+}
+
+// Navs
+.nav-icon {
+  .nav-link {
+    padding: 0;
+    color: $secondary;
+    @include transition(all 0.3s);
+
+    &:hover,&:focus {
+      color: $gray-700;
+      transform: scale(1.15);
+    }
+
+    + .nav-link { margin-left: 12px; }
+
+    i {
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+}
