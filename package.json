@@ -1,7 +1,7 @@
 {
   "name": "tekla",
   "version": "1.0.0",
-  "description": "Responsive UI blocks templates",
+  "description": "Free Responsive Website Header",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
