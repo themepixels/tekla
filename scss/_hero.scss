@@ -38,13 +38,17 @@
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1.5px;
-    height: 42px;
+    height: 38px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-width: 1.5px;
     border-color: rgba($color-one-01, .7);
     color: rgba($color-one-01, .7);
+
+    @include media-breakpoint-up(lg) {
+      height: 42px;
+    }
 
     &:hover,
     &:focus {
@@ -70,19 +74,17 @@
 }
 
 .hero-body {
-  margin-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
 
   @include media-breakpoint-up(lg) {
     width: 50%;
-    margin-top: 0;
     margin-bottom: 40px;
   }
 }
 
 .hero-footer {
-  margin-top: 20px;
+  margin-top: 25px;
   padding-left: 10px;
 
   @include media-breakpoint-up(lg) {
@@ -93,6 +95,11 @@
 
   @include media-breakpoint-up(xxl) {
     margin-top: 40px;
+  }
+
+  .section-title {
+    margin-bottom: 15px;
+    @include media-breakpoint-up(lg) { margin-bottom: 25px; }
   }
 }
 
@@ -110,6 +117,7 @@
 }
 
 .hero-text {
+  font-size: 15px;
   color: $gray-700;
 
   @include media-breakpoint-up(lg) {
@@ -138,7 +146,7 @@
   .hero-image {
     align-self: flex-end;
     position: relative;
-    width: 80%;
+    width: 70%;
     margin-right: -15px;
 
     @include media-breakpoint-up(lg) {
@@ -166,13 +174,17 @@
   }
 
   .section {
-    padding-top: $header-height;
+    padding-top: 80px;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: $header-height;
+    }
   }
 
   .section-label { color: $color-one-02; }
 
   .hero-title {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     @include media-breakpoint-up(lg) { margin-bottom: 30px; }
   }
