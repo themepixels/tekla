@@ -3,7 +3,7 @@ Free Responsive Website Header
 
 [SEE DEMO](http://themepixels.me/application/tekla/)
 
-<img src="http://themepixels.me/application/tekla/preview.jpg" alt="Tekla" width="70%">
+<img src="http://themepixels.me/application/tekla/preview.jpg" alt="Tekla" width="100%">
 
 ## Features
 - Bootstrap 5
